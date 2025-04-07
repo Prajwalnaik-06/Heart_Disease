@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="age">Age:</label>
+        <input type="number" name="age" required placeholder="e.g., 45">
+
+        <label for="sex">Sex:</label>
+        <select name="sex" required>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+
+        <label for="cp">Chest Pain Type:</label>
+        <select name="cp" required>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-Anginal Pain</option>
+            <option value="3">Asymptomatic</option>
+        </select>
+
+        <label for="trestbps">Resting Blood Pressure:</label>
+        <input type="number" name="trestbps" required placeholder="e.g., 130">
+
+        <label for="chol">Cholesterol:</label>
+        <input type="number" name="chol" required placeholder="e.g., 250">
+
+        <label for="fbs">Fasting Blood Sugar > 120 mg/dl:</label>
+        <select name="fbs" required>
+            <option value="1">True</option>
+            <option value="0">False</option>
+        </select>
+
+        <label for="restecg">Resting Electrocardiographic Results:</label>
+        <select name="restecg" required>
+            <option value="0">Normal</option>
+            <option value="1">Having ST-T wave abnormality</option>
+            <option value="2">Showing probable or definite left ventricular hypertrophy</option>
+        </select>
+
+        <label for="thalach">Maximum Heart Rate Achieved:</label>
+        <input type="number" name="thalach" required placeholder="e.g., 150">
+
+        <label for="exang">Exercise Induced Angina:</label>
+        <select name="exang" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="oldpeak">Oldpeak:</label>
+        <input type="number" name="oldpeak" required placeholder="e.g., 1.5">
+
+        <label for="slope">Slope of Peak Exercise ST Segment:</label>
+        <select name="slope" required>
+            <option value="0">Upsloping</option>
+            <option value="1">Flat</option>
+            <option value="2">Downsloping</option>
+        </select>
+
+        <label for="ca">Number of Major Vessels:</label>
+        <select name="ca" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
+        <label for="thal">Thalassemia:</label>
+        <select name="thal" required>
+            <option value="1">Normal</option>
+            <option value="2">Fixed Defect</option>
+            <option value="3">Reversible Defect</option>
+        </select>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
